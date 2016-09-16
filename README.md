@@ -13,8 +13,7 @@ Technologies used
 Running instructions
 --------------------
 The project can be run from within an IDE (such as IntelliJ) or directly from the command-line, like so:
-* mvn package
-* java -jar target/weatherhq-0.0.1-SNAPSHOT.jar
+* ./mvnw spring-boot:run -Drun.arguments="--open.weather.map.api.key=$INSERT_OPEN_WEATHER_MAP_API_KEY_HERE"
 
 To do
 --------------
