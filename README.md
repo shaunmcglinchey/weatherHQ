@@ -2,6 +2,14 @@ WeatherHQ
 ==============
 Spring Boot web application with backend integration to OpenWeatherMap RESTful API
 
+Technologies used
+--------------
+* Java 8
+* Spring Boot 1.4
+* Maven
+* Mockito
+* AssertJ
+
 To do
 --------------
 * Increase test coverage
