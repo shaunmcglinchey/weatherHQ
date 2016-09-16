@@ -12,6 +12,7 @@ Technologies used
 
 To do
 --------------
-* Increase test coverage
+* Increase unit test coverage
+* Add integration tests
 * Validate accuracy of OpenWeatherMap sunrise and sunset times
 * Add simple AngularJS frontend (simple form component that invokes a 'weatherService' which in turn will handle the calls to the API backend via Angular '$http' service).
