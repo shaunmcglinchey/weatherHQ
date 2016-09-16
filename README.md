@@ -10,6 +10,12 @@ Technologies used
 * Mockito
 * AssertJ
 
+Running instructions
+--------------------
+The project can be run from within an IDE (such as IntelliJ) or directly from the command-line, like so:
+* mvn package
+* java -jar target/weatherhq-0.0.1-SNAPSHOT.jar
+
 To do
 --------------
 * Increase unit test coverage
