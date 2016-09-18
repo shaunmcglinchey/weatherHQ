@@ -72,5 +72,6 @@
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.objenesis:objenesis:2.1" level="project" />
     <orderEntry type="library" name="Maven: net.aksingh:owm-japis:2.5.0.3" level="project" />
     <orderEntry type="library" name="Maven: org.webjars:angularjs:1.5.8" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars:angular-material:1.1.0" level="project" />
   </component>
 </module>
