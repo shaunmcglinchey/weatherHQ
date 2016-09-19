@@ -13,4 +13,12 @@ describe('Weather factory', function() {
     it('should exist', function() {
         expect(Weather).toBeDefined();
     });
+
+    // A set of tests for our Weather.current() method
+    describe('.current()', function() {
+        // A simple test to verify the method current exists
+        it('should exist', function() {
+            expect(Weather.current).toBeDefined();
+        });
+    });
 });

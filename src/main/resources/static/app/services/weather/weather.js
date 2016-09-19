@@ -6,8 +6,8 @@
         .factory('Weather', function() {
             var Weather = {};
 
-            // Weather.method = function() {};
-
+            Weather.current = function() {};
+            
             return Weather;
         });
 })();
