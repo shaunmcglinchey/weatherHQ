@@ -28,5 +28,10 @@ describe('Weather factory', function() {
             expect(Weather.findById(2)).toEqual(singleWeatherReport);
         });
 
+        // A test to verify that calling findById() with an id that doesn't exist, in this case '99', returns undefined
+        it('should return undefined if the weather report cannot be found', function() {
+            expect(Weather.findById('99')).not.toBeDefined();
+        });
+
     });
 });
