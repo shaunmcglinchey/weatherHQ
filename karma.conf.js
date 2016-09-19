@@ -15,7 +15,12 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-        './src/main/resources/static/app/weather-detail/weatherDetail.spec.js'
+      './node_modules/angular/angular.js',                             // angular
+      './node_modules/angular-ui-router/release/angular-ui-router.js', // ui-router
+      './node_modules/angular-mocks/angular-mocks.js',                 // loads our modules for tests
+      './src/main/resources/static/app/services/weather/weather.js',
+      './src/main/resources/static/app/app.js', // our angular app
+      './src/main/resources/static/app/services/weather/weather.spec.js'
     ],
 
 
