@@ -6,6 +6,7 @@ Technologies used
 --------------
 * Java 8
 * Spring Boot 1.4
+* Angular 1.5 (Angular components)
 * Maven
 * Mockito
 * AssertJ
