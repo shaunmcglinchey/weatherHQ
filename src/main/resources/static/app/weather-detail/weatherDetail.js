@@ -1,5 +1,5 @@
 angular.module('WeatherApp').component('weatherDetail', {
-    templateUrl: 'weather-detail/weatherDetail.html',
+    templateUrl: './app/weather-detail/weatherDetail.html',
     controller: function WeatherDetailController($scope, weatherService) {
         weatherService.getWeather()
             .success(function (data) {
