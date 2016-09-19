@@ -1,6 +1,8 @@
 describe('Weather factory', function() {
     var Weather;
 
+    var WeatherReport = { description: "rain with clouds" };
+
     // Before each test load our api.weather module
     beforeEach(angular.mock.module('api.weather'));
 
@@ -19,6 +21,11 @@ describe('Weather factory', function() {
         // A simple test to verify the method current exists
         it('should exist', function() {
             expect(Weather.current).toBeDefined();
+        });
+
+        // A test to verify that calling current() returns the weather report we hard-coded above
+        it('should return a hard-coded weather report', function() {
+            expect(Weather.current()).toEqual(WeatherReport);
         });
     });
 });

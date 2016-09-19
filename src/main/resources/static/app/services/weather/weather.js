@@ -6,8 +6,12 @@
         .factory('Weather', function() {
             var Weather = {};
 
-            Weather.current = function() {};
-            
+            var WeatherReport = { description: "rain with clouds" };
+
+            Weather.current = function() {
+                return WeatherReport;
+            };
+
             return Weather;
         });
 })();
