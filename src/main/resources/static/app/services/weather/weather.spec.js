@@ -1,7 +1,7 @@
 describe('Weather factory', function() {
     var Weather;
 
-    var WeatherReport = { description: "rain with clouds" };
+    var singleWeatherReport = { id: 2 , description: "rain with clouds" };
 
     // Before each test load our api.weather module
     beforeEach(angular.mock.module('api.weather'));
@@ -17,15 +17,16 @@ describe('Weather factory', function() {
     });
 
     // A set of tests for our Weather.current() method
-    describe('.current()', function() {
-        // A simple test to verify the method current exists
-        it('should exist', function() {
-            expect(Weather.current).toBeDefined();
+    describe('.findById()', function() {
+
+        it('should return weather for a specific city', function() {
+            expect(Weather.findById).toBeDefined();
         });
 
-        // A test to verify that calling current() returns the weather report we hard-coded above
-        it('should return a hard-coded weather report', function() {
-            expect(Weather.current()).toEqual(WeatherReport);
+        // A test to verify that calling findById() with an id, in this case '2', returns a single weather report
+        it('should return one weather object if it exists', function() {
+            expect(Weather.findById(2)).toEqual(singleWeatherReport);
         });
+
     });
 });
