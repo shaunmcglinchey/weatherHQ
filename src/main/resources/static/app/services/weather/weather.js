@@ -3,20 +3,16 @@
 
     // Creating the module and factory we referenced in the beforeEach blocks in our test file
     angular.module('api.weather', [])
-        .factory('Weather', function() {
+        .factory('Weather', function($http) {
+            var API = 'http://localhost:8000/weather/current/';
 
-            var weatherList = [
-                {
-                    id: 2, description: "rain with clouds"
-                }
-            ];
             var Weather = {};
 
             Weather.findById = function(id) {
-                // Returning a single weather object as our test expects it to
-                return weatherList.find(function(weather) {
-                    return weather.id === id;
-                });
+                return $http.get(API + id)
+                    .then(function(res) {
+                        return res.data;
+                    });
             };
 
             return Weather;
