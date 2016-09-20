@@ -19,6 +19,11 @@ The project can be run from within an IDE (such as IntelliJ) or directly from th
 * Once the embedded Tomcat has started the web application can be viewed by visiting the following URL in the browser:
 http://localhost:8080
 
+
+To run the frontend (AngularJs) unit tests run the following commands:
+* npm install
+* karma start
+
 To do
 --------------
 * Increase unit test coverage
