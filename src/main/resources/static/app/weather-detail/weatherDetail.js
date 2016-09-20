@@ -1,19 +1,13 @@
 angular.module('WeatherApp').component('weatherDetail', {
     templateUrl: './app/weather-detail/weatherDetail.html',
-    controller: function WeatherDetailController($scope, weatherService) {
-        weatherService.getWeather()
+    controller: function WeatherDetailController($scope, Weather) {
+        Weather.findById(2643743)
             .success(function (data) {
-                $scope.weather = data;
-                $scope.valid = true;
+            $scope.weather = data;
+            $scope.valid = true;
             })
             .error(function () {
                 $scope.valid = false;
             });
     }
-}).factory('weatherService', function ($http) {
-    return {
-        getWeather: function () {
-            return $http.get('http://localhost:8080/weather/current/2643743');
-        }
-    };
 });

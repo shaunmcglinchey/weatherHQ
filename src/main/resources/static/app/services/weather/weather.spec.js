@@ -18,7 +18,7 @@ describe('Weather factory', function() {
     beforeEach(angular.mock.module('api.weather'));
 
     // Inject $q and $httpBackend for testing HTTP requests
-    // Before each test set our injected Users factory (_Users_) to our local Users variable
+    // Before each test set our injected Weather factory (_Weather_) to our local Weather variable
     beforeEach(inject(function(_Weather_, _$q_, _$httpBackend_) {
         Weather = _Weather_;
         $q = _$q_;

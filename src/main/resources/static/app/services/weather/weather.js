@@ -14,7 +14,6 @@
                         return res.data;
                     });
             };
-
             return Weather;
         });
 })();
