@@ -1,9 +1,6 @@
 describe('Weather factory', function() {
-    var Weather;
 
-    var singleWeatherReport = { id: 2 , description: "sunny with clouds" };
-
-    var Pokemon, $q, $httpBackend;
+    var Weather, $q, $httpBackend;
 
     // Add Weather endpoint
     var API = 'http://localhost:8000/weather/current/';
@@ -25,7 +22,7 @@ describe('Weather factory', function() {
         $httpBackend = _$httpBackend_;
     }));
 
-    // A simple test to verify the Users factory exists
+    // A simple test to verify the Weather factory exists
     it('should exist', function() {
         expect(Weather).toBeDefined();
     });
