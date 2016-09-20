@@ -28,6 +28,5 @@ To do
 --------------
 * Increase unit test coverage
 * Add integration tests
-* Update weatherDetail component with input of city code via the UI (form)
 * Validate accuracy of OpenWeatherMap sunrise and sunset times
-* Finish simple AngularJS frontend (simple form component that invokes a 'weatherService' which handles the calls to the API backend via Angular '$http' service).
+* Finish AngularJS frontend 'weatherDetail' component to support input of city code via the UI (form).
