@@ -11,6 +11,11 @@ describe('Weather factory', function() {
         'cityName': 'London'
     };
 
+    // Add new mocked Weather response
+    var RESPONSE_ERROR = {
+        'detail': 'Not found.'
+    };
+
     // Before each test load our api.weather module
     beforeEach(angular.mock.module('api.weather'));
 
@@ -63,6 +68,27 @@ describe('Weather factory', function() {
             expect(result.id).toEqual(25);
             expect(result.cityName).toEqual('London');
 
+        });
+
+        it('should return a 404 when called with an invalid city code', function() {
+            // Update search term
+            var cityCode = 21;
+
+            // Update status code and response object (reject instead of when/resolve)
+            $httpBackend.whenGET(API + cityCode).respond(404, $q.reject(RESPONSE_ERROR));
+
+            expect(Weather.findById).not.toHaveBeenCalled();
+            expect(result).toEqual({});
+
+            // Update chained method to catch
+            Weather.findById(cityCode)
+                .catch(function(res) {
+                    result = res;
+                });
+            $httpBackend.flush();
+
+            expect(Weather.findById).toHaveBeenCalledWith(cityCode);
+            expect(result.detail).toEqual('Not found.');
         });
 
     });
