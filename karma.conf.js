@@ -19,8 +19,10 @@ module.exports = function(config) {
       './node_modules/angular-ui-router/release/angular-ui-router.js', // ui-router
       './node_modules/angular-mocks/angular-mocks.js',                 // loads our modules for tests
       './src/main/resources/static/app/services/weather/weather.js',
+      './src/main/resources/static/app/components/location/location.js',
       './src/main/resources/static/app/app.js', // our angular app
-      './src/main/resources/static/app/services/weather/weather.spec.js'
+      './src/main/resources/static/app/services/weather/weather.spec.js',
+      './src/main/resources/static/app/components/location/location.spec.js'
     ],
 
 
