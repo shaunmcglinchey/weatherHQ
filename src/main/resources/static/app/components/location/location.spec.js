@@ -11,11 +11,18 @@ describe('components.location', function() {
     }));
 
     describe('LocationController', function() {
-        var LocationController;
+        var LocationController, singleLocation;
 
         beforeEach(function() {
+
+            // Define singleUser and add resolvedUser as a dependency to our controller
+            singleLocation = {
+                id: 123,
+                cityName: 'London'
+            };
+
             // Create an instance of our controller
-            LocationController = $controller('LocationController', { });
+            LocationController = $controller('LocationController', { resolvedLocation: singleLocation });
         });
 
         // Verify our controller exists

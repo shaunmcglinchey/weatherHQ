@@ -10,6 +10,11 @@ Technologies used
 * Maven
 * Mockito
 * AssertJ
+* Jasmine
+* Karma
+* Node.js (npm)
+* Git
+* Bootstrap
 
 Running instructions
 --------------------
@@ -30,4 +35,4 @@ To do
 * Add unit tests for Location Controller, UI-Routing, and use of Weather Factory
 * Add integration tests
 * Validate accuracy of OpenWeatherMap sunrise and sunset times
-* Finish AngularJS frontend 'weatherDetail' component by adddingg support for the input of city code via the UI (form).
+* Finish AngularJS frontend 'weatherDetail' component by adding support for the input of city code via the UI (form).
