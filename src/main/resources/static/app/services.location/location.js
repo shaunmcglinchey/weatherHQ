@@ -14,6 +14,10 @@
 
             var Location = {};
 
+            Location.findById = function() {
+                return locations[0];
+            };
+
             Location.all = function() {
                 return locations;
             };

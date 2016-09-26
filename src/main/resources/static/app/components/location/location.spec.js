@@ -29,5 +29,9 @@ describe('components.location', function() {
         it('should be defined', function() {
             expect(LocationController).toBeDefined();
         });
+
+        it('should set the view model location object to the resolvedLocation', function() {
+            expect(LocationController.location).toEqual(singleLocation);
+        });
     });
 });
