@@ -3,9 +3,15 @@
 
     // Define the component and controller we loaded in our test
     angular.module('components.location', [])
-        .controller('LocationController', function(resolvedLocation) {
+        .controller('LocationController', function(resolvedLocation, Weather) {
             var vm = this;
             vm.location = resolvedLocation;
+
+            // Call our Weather service using our resolved location's city code
+            Weather.findById(vm.location.id)
+                .then(function(result) {
+                    vm.location.weather = result;
+                });
         })
         .config(function($stateProvider) {
             $stateProvider
