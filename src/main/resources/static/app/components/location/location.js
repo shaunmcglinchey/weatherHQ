@@ -10,7 +10,7 @@
             // Call our Weather service using our resolved location's city code
             Weather.findById(vm.location.id)
                 .then(function(result) {
-                    vm.location.weather = result;
+                    vm.location.weatherDescription = result.weatherDescription;
                 });
         })
         .config(function($stateProvider) {

@@ -1,18 +1,17 @@
 describe('components.location', function() {
     var $controller, Weather, $q, $httpBackend;
-    var API = 'http://pokeapi.co/api/v2/pokemon/';
+    var API = 'http://localhost:8000/weather/current/';
+
     var RESPONSE_SUCCESS = {
-        'id': 58,
-        'name': 'growlithe',
-        'sprites': {
-            'front_default': 'http://pokeapi.co/media/sprites/pokemon/58.png'
-        },
-        'types': [{
-            'type': { 'name': 'fire' }
-        }]
+        id: 2643743,
+        cityName: 'London',
+        weatherDescription: 'light rain',
+        temperatureInFahrenheit: 58.79999923706055,
+        dateToday: "19-09-2016",
+        timeAtSunrise: "2:43am",
+        timeAtSunset: "3:02pm",
+        temperatureInCelsius: 14.888888465033638
     };
-
-
 
     // Load ui.router and our components.profile module which we'll create next
     beforeEach(angular.mock.module('ui.router'));
@@ -79,6 +78,9 @@ describe('components.location', function() {
             expect(LocationController.location.weather).toBeUndefined();
             expect(LocationController.location.id).toEqual(123);
             expect(LocationController.location.cityName).toEqual('London');
+            $httpBackend.whenGET(API + singleLocation.id).respond(200, $q.when(RESPONSE_SUCCESS));
+            $httpBackend.flush();
+            expect(LocationController.location.weatherDescription).toEqual(RESPONSE_SUCCESS.weatherDescription);
         });
     });
 });
