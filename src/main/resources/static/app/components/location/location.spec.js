@@ -77,6 +77,8 @@ describe('components.location', function() {
 
         it('should call Weather.findById and return a Weather object', function() {
             expect(LocationController.location.weather).toBeUndefined();
+            expect(LocationController.location.id).toEqual(123);
+            expect(LocationController.location.cityName).toEqual('London');
         });
     });
 });
