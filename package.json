@@ -4,7 +4,7 @@
   "description": "WeatherHQ ============== Spring Boot web application with backend integration to OpenWeatherMap RESTful API",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "karma start"
   },
   "repository": {
     "type": "git",
