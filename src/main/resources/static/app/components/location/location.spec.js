@@ -13,6 +13,11 @@ describe('components.location', function() {
         temperatureInCelsius: 14.888888465033638
     };
 
+    // Add mocked Error response
+    var RESPONSE_ERROR = {
+        'weather': 'Not found.'
+    };
+
     // Load ui.router and our components.profile module which we'll create next
     beforeEach(angular.mock.module('ui.router'));
     beforeEach(angular.mock.module('api.weather'));
@@ -81,6 +86,18 @@ describe('components.location', function() {
             $httpBackend.whenGET(API + singleLocation.id).respond(200, $q.when(RESPONSE_SUCCESS));
             $httpBackend.flush();
             expect(LocationController.location.weatherDescription).toEqual(RESPONSE_SUCCESS.weatherDescription);
+        });
+
+        it('should call Weather.findById with nonexistent id and default to a weather not available message', function() {
+            expect(LocationController.location.weatherDescription).toBeUndefined();
+
+            // Declare the endpoint we expect our service to hit and provide it with our mocked return values
+            $httpBackend.whenGET(API + singleLocation.id).respond(404, $q.reject(RESPONSE_ERROR));
+            $httpBackend.flush();
+
+            // Add expectation that our weather description will be set to a default 'not available' message
+            expect(LocationController.location.weatherDescription).toBeDefined();
+            expect(LocationController.location.weatherDescription).toEqual('Weather data not available');
         });
     });
 });

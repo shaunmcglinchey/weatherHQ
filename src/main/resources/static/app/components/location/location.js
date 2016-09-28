@@ -11,6 +11,10 @@
             Weather.findById(vm.location.id)
                 .then(function(result) {
                     vm.location.weatherDescription = result.weatherDescription;
+                })
+                .catch(function(result) {
+                    // Add the default weather not found text
+                    vm.location.weatherDescription = 'Weather data not available';
                 });
         })
         .config(function($stateProvider) {
