@@ -32,7 +32,7 @@ To run the frontend (AngularJs) unit tests run the following commands:
 To do
 --------------
 * Increase unit test coverage
-* Add unit tests for Location Controller, UI-Routing, and use of Weather Factory
+* Add unit tests for UI-Routing
 * Add integration tests
 * Validate accuracy of OpenWeatherMap sunrise and sunset times
 * Finish AngularJS frontend 'weatherDetail' component by adding support for the input of city code via the UI (form).
